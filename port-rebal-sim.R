@@ -4,8 +4,6 @@ set.seed(1)
 
 # Parameters --------------------------------------------------------------
 num_periods <- 100
-# rebalance_every <- 4
-# rmse_threshold <- 0.01
 
 # Assets ------------------------------------------------------------------
 shocks <- c(
@@ -16,9 +14,6 @@ shocks <- c(
 # Allocation --------------------------------------------------------------
 target_allocation <- c(0.90, 0.10)
 
-
-
-
 # Utility Functions -------------------------------------------------------
 portfolio_return <- function(portfolio_values) {
   return(sum(portfolio_values[nrow(portfolio_values), ]) / sum(portfolio_values[1, ]) - 1)
@@ -27,8 +22,6 @@ portfolio_return <- function(portfolio_values) {
 rmse <- function(vector1, vector2) {
   return(sqrt(sum(abs(vector1 - vector2)^2)))
 }
-
-
 
 # Simulation Functions--------------------------------------------------------------
 model_no_rebalancing <- function(target_allocation, num_periods, shocks) {
