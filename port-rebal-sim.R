@@ -91,9 +91,9 @@ for (i in 1:num_simulation_runs) {
   simulation_results[i, 2] = model_cyclical_rebalancing(target_allocation, num_periods, rebalance_every = 4, shocks)
   simulation_results[i, 3] = model_rmse_rebalancing(target_allocation, num_periods, rmse_threshold = 0.05, shocks)
 }
-colnames(simulation_results) <- c("none", "cylical", "RMSE")
+colnames(simulation_results) <- c("None", "Cylical", "RMSE")
 results <- as_tibble(simulation_results, .rows = num_simulation_runs) %>%
-  pivot_longer(cols = c(none, cylical, RMSE), names_to = "method", values_to = "return") %>%
+  pivot_longer(cols = c(None, Cylical, RMSE), names_to = "method", values_to = "return") %>%
   mutate(method = as.factor(method))
 
 # Plots and Kernels -------------------------------------------------------
