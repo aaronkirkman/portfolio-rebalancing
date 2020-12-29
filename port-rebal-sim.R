@@ -99,3 +99,6 @@ results <- as_tibble(simulation_results, .rows = num_simulation_runs) %>%
 # Plots and Kernels -------------------------------------------------------
 results %$%
   sm.density.compare(return, method)
+title(main="Portfolio Returns by Rebalancing Method")
+colfill<-c(2:(2+length(levels(results$method))))
+legend(x=18, y=0.10, levels(results$method), fill=colfill)
