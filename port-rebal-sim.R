@@ -97,7 +97,5 @@ results <- as_tibble(simulation_results, .rows = num_simulation_runs) %>%
   mutate(method = as.factor(method))
 
 # Plots and Kernels -------------------------------------------------------
-kernel_estimator <- function(x) {density(x, bw="sj")}
-kernels <- apply(simulation_results, 2, kernel_estimator)
 results %$%
   sm.density.compare(return, method)
